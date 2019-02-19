@@ -7,9 +7,7 @@ import javax.persistence.*;
 public class Customer
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "custcode")
-    private long id;
+    private long custcode;
 
     @Column(nullable = false)
     private String custname;
@@ -32,7 +30,6 @@ public class Customer
 
     private String phone;
 
-    @ManyToOne()
     @Column(nullable = false)
     private long agentcode;
 
@@ -42,7 +39,7 @@ public class Customer
 
     public long getCustcode()
     {
-        return id;
+        return custcode;
     }
 
     public String getCustname()

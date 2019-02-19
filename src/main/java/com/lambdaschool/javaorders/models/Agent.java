@@ -3,13 +3,11 @@ package com.lambdaschool.javaorders.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="agent")
+@Table(name="agents")
 public class Agent
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "agentcode")
-    private long id;
+    private long agentcode;
 
     private String agentname;
 
@@ -25,18 +23,9 @@ public class Agent
     {
     }
 
-    public Agent(String agentname, String workingarea, double commission, String phone, String country)
+    public long getAgentcode()
     {
-        this.agentname = agentname;
-        this.workingarea = workingarea;
-        this.commission = commission;
-        this.phone = phone;
-        this.country = country;
-    }
-
-    public long getAgentCode()
-    {
-        return id;
+        return agentcode;
     }
 
     public String getAgentname()

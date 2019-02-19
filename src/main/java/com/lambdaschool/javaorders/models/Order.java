@@ -3,23 +3,19 @@ package com.lambdaschool.javaorders.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 public class Order
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ordnum")
-    private long id;
+    private long ordnum;
 
     private double ordamount;
 
     private double advanceamount;
 
-    @ManyToOne()
     @Column(nullable = false)
     private long custcode;
 
-    @ManyToOne()
     @Column(nullable = false)
     private long agentcode;
 
@@ -31,7 +27,7 @@ public class Order
 
     public long getOrdnum()
     {
-        return id;
+        return ordnum;
     }
 
     public double getOrdamount()
