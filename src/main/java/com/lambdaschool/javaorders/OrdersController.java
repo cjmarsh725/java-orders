@@ -1,6 +1,6 @@
 package com.lambdaschool.javaorders;
 
-import com.lambdaschool.javaorders.models.Agent;
+import com.lambdaschool.javaorders.models.Order;
 import com.lambdaschool.javaorders.repository.AgentRepository;
 import com.lambdaschool.javaorders.repository.CustomerRepository;
 import com.lambdaschool.javaorders.repository.OrderRepository;
@@ -25,9 +25,9 @@ public class OrdersController
     @Autowired
     OrderRepository orderrepo;
 
-    @GetMapping("/agents")
-    public List<Agent> allagents()
+    @GetMapping("/customer/order")
+    public List<Order> customerOrders()
     {
-        return agentrepo.findAll();
+        return orderrepo.findAll();
     }
 }
